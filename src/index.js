@@ -1,10 +1,16 @@
 function dropDownMenuHover(element, button) {
   const parentElement = document.querySelector(element);
+  const dropDownButton = document.querySelector(button);
+
+  if (!parentElement || !dropDownButton) {
+    console.error("Invalid element or button selector.")
+    return;
+  }
+
   parentElement.style.display = "none";
   parentElement.style.position = "absolute";
-
-  const dropDownButton = document.querySelector(button);
   dropDownButton.style.position = "relative";
+
   dropDownButton.addEventListener("mouseenter", () => {
     parentElement.style.display = "block";
   });
@@ -21,6 +27,7 @@ function dropDownMenuClick(element, button) {
   const menuButton = document.querySelector(button);
 
   if (!wrapperElement || !menuButton) {
+    console.error("Invalid element or button selector.")
     return;
   }
 
