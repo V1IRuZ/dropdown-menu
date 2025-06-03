@@ -1,5 +1,3 @@
-import "./styles.css";
-
 function dropDownMenuHover(element, button) {
   const parentElement = document.querySelector(element);
   parentElement.style.display = "none";
@@ -18,5 +16,39 @@ function dropDownMenuHover(element, button) {
   });
 }
 
+function dropDownMenuClick(element, button) {
+  const wrapperElement = document.querySelector(element);
+  const menuButton = document.querySelector(button);
+
+  if (!wrapperElement || !menuButton) {
+    return;
+  }
+
+  wrapperElement.style.display = "none";
+  wrapperElement.style.position = "absolute";
+  menuButton.style.position = "relative";
+
+  const showHideMenu = () => {
+    if (wrapperElement.classList.contains("visible")) {
+      return (wrapperElement.style.display = "block");
+    }
+    wrapperElement.style.display = "none";
+  };
+
+  menuButton.addEventListener("click", () => {
+    wrapperElement.classList.toggle("visible");
+    showHideMenu(wrapperElement);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!wrapperElement.contains(event.target) && event.target !== menuButton) {
+      wrapperElement.classList.remove("visible");
+      showHideMenu(wrapperElement);
+    }
+  });
+}
+
 dropDownMenuHover(".content", ".my-btn");
-dropDownMenuHover(".okay", ".test");
+dropDownMenuClick(".okay", ".test");
+
+export { dropDownMenuClick, dropDownMenuHover };
