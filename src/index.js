@@ -36,26 +36,23 @@ function dropDownMenuClick(element, button) {
   menuButton.style.position = "relative";
 
   const showHideMenu = () => {
-    if (wrapperElement.classList.contains("visible")) {
+    if (wrapperElement.classList.contains("visible-db")) {
       return (wrapperElement.style.display = "block");
     }
     wrapperElement.style.display = "none";
   };
 
   menuButton.addEventListener("click", () => {
-    wrapperElement.classList.toggle("visible");
+    wrapperElement.classList.toggle("visible-db");
     showHideMenu(wrapperElement);
   });
 
   document.addEventListener("click", (event) => {
     if (!wrapperElement.contains(event.target) && event.target !== menuButton) {
-      wrapperElement.classList.remove("visible");
+      wrapperElement.classList.remove("visible-db");
       showHideMenu(wrapperElement);
     }
   });
 }
-
-dropDownMenuHover(".content", ".my-btn");
-dropDownMenuClick(".okay", ".test");
 
 export { dropDownMenuClick, dropDownMenuHover };
