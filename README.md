@@ -8,7 +8,7 @@ A lightweight dropdown menu utility with click and hover functionalities.
 Include the script in your project:
 
 ```js
-import { dropDownMenuClick, dropDownMenuHover } from "./dropdown.js";
+import { dropDownMenuClick, dropDownMenuHover } from "simple-ddmenu";
 ```
 
 ## Usage
@@ -48,5 +48,8 @@ Arguments:
 
 ```js
 dropDownMenuClick(".menu", ".button");
+```
+
+```js
 dropDownMenuHover(".menu", ".button");
 ```
