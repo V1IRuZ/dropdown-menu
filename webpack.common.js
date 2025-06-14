@@ -7,6 +7,9 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    library: "simple_ddmenu",
+    libraryTarget: "umd",
+    globalObject: "this"
   },
   plugins: [
     new HtmlWebpackPlugin({
