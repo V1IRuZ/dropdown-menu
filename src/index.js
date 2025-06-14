@@ -3,7 +3,7 @@ function dropDownMenuHover(element, button) {
   const dropDownButton = document.querySelector(button);
 
   if (!parentElement || !dropDownButton) {
-    console.error("Invalid element or button selector.")
+    console.error("Invalid element or button selector.");
     return;
   }
 
@@ -27,7 +27,7 @@ function dropDownMenuClick(element, button) {
   const menuButton = document.querySelector(button);
 
   if (!wrapperElement || !menuButton) {
-    console.error("Invalid element or button selector.")
+    console.error("Invalid element or button selector.");
     return;
   }
 
@@ -36,23 +36,23 @@ function dropDownMenuClick(element, button) {
   menuButton.style.position = "relative";
 
   const showHideMenu = () => {
-    if (wrapperElement.classList.contains("visible-db")) {
+    if (wrapperElement.classList.contains("visible-dd")) {
       return (wrapperElement.style.display = "block");
     }
     wrapperElement.style.display = "none";
   };
 
   menuButton.addEventListener("click", () => {
-    wrapperElement.classList.toggle("visible-db");
+    wrapperElement.classList.toggle("visible-dd");
     showHideMenu(wrapperElement);
   });
 
   document.addEventListener("click", (event) => {
     if (!wrapperElement.contains(event.target) && event.target !== menuButton) {
-      wrapperElement.classList.remove("visible-db");
+      wrapperElement.classList.remove("visible-dd");
       showHideMenu(wrapperElement);
     }
   });
 }
 
-export { dropDownMenuClick, dropDownMenuHover };
+module.exports = { dropDownMenuClick, dropDownMenuHover };
