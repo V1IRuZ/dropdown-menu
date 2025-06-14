@@ -1,0 +1,11 @@
+dist/index.html
+node_modules/
+src/
+eslint.config.js
+webpack.common.js
+webpack.dev.js
+webpack.prod.js
+package-lock.json
+.prettierignore
+.gitignore
+.prettiererrc
