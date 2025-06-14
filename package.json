@@ -1,4 +1,20 @@
 {
+  "name": "simple-ddmenu",
+  "description": "A lightweight dropdown menu utility with click and hover functionalities.",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "files": [
+    "dist/main.js"
+  ],
+  "keywords": [
+    "dropdown",
+    "menu",
+    "UI"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/V1IRuZ/dropdown-menu"
+  },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
     "css-loader": "^7.1.2",
